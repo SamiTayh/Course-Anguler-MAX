@@ -1,0 +1,45 @@
+<!-- <app-server></app-server> -->
+
+<button class="btn btn-primary" [disabled]="!allownewserver"> click me</button>
+<p [innerText]="allownewserver"></p>
+
+<button (click)="getCreatedServer()">on ckick</button>
+<p>{{CreatedServer}}</p>
+
+<hr/>
+
+<input type="text" class="form-control" (input)="OnUpdateServer($event)" />
+<br/>
+<label>{{ServerName}}</label>
+ <input type="text" [(ngModel)]="ServerNames" />
+<button (click)="getCreatedServer()">on ckick</button>
+
+<hr/>
+
+<input type="text" [(ngModel)]="username" />
+<p>{{username}}</p>
+<button [disabled]="username==''" (click)="getreset()">rest username</button>
+
+<hr/>
+
+
+<input type="text" class="form-control" [(ngModel)]="Servertext" />
+
+<button [disabled]="!allownewserver" (click)="getCreatedServer()">ADD SERVESTEXT </button>
+
+<P *ngIf="CreatedServertext"> hello serves texr  {{Servertext}}</P>
+<P *ngIf="!CreatedServertext"> NO hello serves texr  </P>
+
+
+<hr/>
+<br />
+
+
+<p [ngStyle]="{backgroundColor: 'green'}">in pargrapth in {{getServerStatus()}}</p>
+<br />
+<p [ngStyle]="{backgroundColor: 'red'}">in pargrapth in {{getServerStatus()}}</p>
+
+<!-- ////ng for //// -->
+<input type="text" [(ngModel)]="ServerNames" />
+<button (click)="getservicefor()">on ckick</button>
+<app-server *ngFor="let server of serverfor"></app-server>
